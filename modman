@@ -1,0 +1,13 @@
+# Name: Ometria_Magento_Extension
+# Description: Magento Integration with Ometria
+
+app/code/community/Ometria/AbandonedCarts  app/code/community/Ometria/AbandonedCarts
+app/code/community/Ometria/Core  app/code/community/Ometria/Core
+app/code/community/Ometria/Api  app/code/community/Ometria/Api
+app/design/frontend/base/default/layout/ometria app/design/frontend/base/default/layout/ometria
+app/design/frontend/base/default/template/ometria app/design/frontend/base/default/template/ometria
+app/design/adminhtml/default/default/layout/ometria app/design/adminhtml/default/default/layout/ometria
+app/design/adminhtml/default/default/template/ometria app/design/adminhtml/default/default/template/ometria
+app/etc/modules/* app/etc/modules/
+js/ometria/* js/ometria/
+Ometria_Magento_Extension.xml var/connect/Ometria_Magento_Extension.xml

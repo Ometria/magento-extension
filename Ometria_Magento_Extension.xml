@@ -1,0 +1,134 @@
+<_>
+   <form_key>4CVkCULZ46udPK7j</form_key>
+   <name>Ometria_Magento_Extension</name>
+   <channel>community</channel>
+   <version_ids>
+      <version_ids>2</version_ids>
+      <version_ids>1</version_ids>
+   </version_ids>
+   <summary>Radically simple ecommerce analytics
+</summary>
+   <description>The official Ometria Magento extension.
+
+Helping you win at E-commerce
+
+Tailored to the needs of the online retailer, the Ometria dashboards have been designed by e-commerce specialists from the ground up. Product and customer centric, we hook up website tracking with back end data for 360 degree visibility, and allow retailers to add targets, margins and costs. No unnecessary &apos;deep dive&apos; analysis, no more bootstrapped report building, no more data overload. Download reports and graphs instantly for presentations or email to relevant stakeholders.
+
+We&apos;ll not only help e-commerce managers look good, we&apos;ll help them feel in control, with the data they need, all in one place.
+
+Enough Data already. Tell me what to do!
+
+We don&apos;t just pull the right data together in one place, we also create insights. Our team of data scientists have created a set of algorithms to spot weaknesses, under-performance and opportunities, so every time a retailer logs into their dashboards we present a short list of top revenue wins.
+
+Whether it&apos;s with our multi-dimension funnel analysis which flags up specific channels that may be under-performing, or our customer dashboard which spots channels that deliver customers with the best CLV, our &apos;actionable insights&apos; come ready to go.</description>
+   <license>Open Source License (OSL)</license>
+   <license_uri>http://opensource.org/licenses/osl-3.0.php</license_uri>
+   <version>1.1.10</version>
+   <stability>stable</stability>
+   <notes>Add more ways to work out if a product is in stock and saleable.</notes>
+   <authors>
+      <name>
+         <name>Alastair James</name>
+      </name>
+      <user>
+         <user>aljames1981</user>
+      </user>
+      <email>
+         <email>al.james@gmail.com</email>
+      </email>
+   </authors>
+   <depends_php_min>5.1.0</depends_php_min>
+   <depends_php_max>6.0.0</depends_php_max>
+   <depends>
+      <package>
+         <name>
+            <name/>
+         </name>
+         <channel>
+            <channel/>
+         </channel>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+         <files>
+            <files>                                                                            </files>
+         </files>
+      </package>
+      <extension>
+         <name>
+            <name>Core</name>
+         </name>
+         <min>
+            <min/>
+         </min>
+         <max>
+            <max/>
+         </max>
+      </extension>
+   </depends>
+   <contents>
+      <target>
+         <target>magelocal</target>
+         <target>magecommunity</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>mageetc</target>
+         <target>mageweb</target>
+         <target>mageetc</target>
+         <target>magedesign</target>
+         <target>magedesign</target>
+         <target>mageetc</target>
+      </target>
+      <path>
+         <path/>
+         <path>Ometria</path>
+         <path>frontend/base/default/layout/ometria</path>
+         <path>frontend/base/default/template/ometria</path>
+         <path>modules/Ometria_Core.xml</path>
+         <path>js/ometria</path>
+         <path>modules/Ometria_Api.xml</path>
+         <path>adminhtml/default/default/layout/ometria</path>
+         <path>adminhtml/default/default/template/ometria</path>
+         <path>modules/Ometria_AbandonedCarts.xml</path>
+      </path>
+      <type>
+         <type>file</type>
+         <type>dir</type>
+         <type>dir</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>file</type>
+         <type>dir</type>
+         <type>dir</type>
+         <type>file</type>
+      </type>
+      <include>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+         <include/>
+      </include>
+      <ignore>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+         <ignore/>
+      </ignore>
+   </contents>
+</_>
