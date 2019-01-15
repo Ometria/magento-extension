@@ -6,7 +6,7 @@ class Ometria_Core_WizardController extends Mage_Adminhtml_Controller_Action {
     const OMETRIA_API_USER_FIRSTNAME = 'Ometria';
     const OMETRIA_API_USER_LASTNAME = 'Ometria';
     const OMETRIA_API_USER_EMAIL = 'ometria@ometria.com';
-    const OMETRIA_API_TEST_URL = 'https://console.ometria.com/setup/test-importer/magento';
+    const OMETRIA_API_TEST_URL = 'https://admin.ometria.com/setup/test-importer/magento';
 
     public function indexAction() {
         $this->loadLayout();
@@ -120,6 +120,7 @@ class Ometria_Core_WizardController extends Mage_Adminhtml_Controller_Action {
         curl_setopt($ch, CURLOPT_URL, self::OMETRIA_API_TEST_URL);
         curl_setopt($ch, CURLOPT_POST, 2);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fieldsString);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
         $rawResponse = curl_exec($ch);
 
