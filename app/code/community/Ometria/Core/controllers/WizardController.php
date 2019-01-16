@@ -6,7 +6,7 @@ class Ometria_Core_WizardController extends Mage_Adminhtml_Controller_Action {
     const OMETRIA_API_USER_FIRSTNAME = 'Ometria';
     const OMETRIA_API_USER_LASTNAME = 'Ometria';
     const OMETRIA_API_USER_EMAIL = 'ometria@ometria.com';
-    const OMETRIA_API_TEST_URL = 'https://admin.ometria.com/setup/test-importer/magento';
+    const OMETRIA_API_TEST_URL = 'https://admin.ometria.com/setup/test-importer/magento/';
 
     public function indexAction() {
         $this->loadLayout();
@@ -113,8 +113,6 @@ class Ometria_Core_WizardController extends Mage_Adminhtml_Controller_Action {
 
         $fieldsString = http_build_query($fields);
 
-        // Here's how I think the implementation will look - Will have to wait until it's been implemented however before
-        // we can be sure.
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_URL, self::OMETRIA_API_TEST_URL);
@@ -124,7 +122,24 @@ class Ometria_Core_WizardController extends Mage_Adminhtml_Controller_Action {
 
         $rawResponse = curl_exec($ch);
 
-        $response = Mage::helper('core')->jsonDecode($rawResponse);
+        if ($rawResponse === false || curl_errno($ch)) {
+            $result []= array('status' => 'error', 'message' => 'Failed when testing connection with Ometria. Reason: ' . curl_error($ch));
+            return;
+        }
+
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if ($http_code !== 200) {
+            $last_effective_url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+            $result []= array('status' => 'error', 'message' => 'Failed when testing connection with Ometria. Status code: '  . $http_code . ' Final URL: "' . $last_effective_url.'"');
+            return;
+        }
+
+        try {
+            $response = Mage::helper('core')->jsonDecode($rawResponse);
+        } catch (Exception $e) {
+            $result []= array('status' => 'error', 'message' => 'Failed when testing connection with Ometria. Reason: ' . $e->getMessage());
+            return;
+        }
 
         if ($response['status'] == 'OK') {
             $result []= array('status' => 'success', 'message' => 'Successfully tested connection with Ometria.');
