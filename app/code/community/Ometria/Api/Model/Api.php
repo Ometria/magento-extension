@@ -246,7 +246,8 @@ class Ometria_Api_Model_Api extends Mage_Api_Model_Resource_Abstract {
                 $listings = isset($product_per_store_attributes[$id]) ? $product_per_store_attributes[$id] : array();
                 $listings = $this->_resolveStoreListings($listings, $store_ids, $productMediaConfig);
                 $info['store_listings'] = $listings;
-
+                
+                $product->clearInstance();
             } catch(Exception $e){
                 $info = false;
             }
