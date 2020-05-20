@@ -266,6 +266,8 @@ class Ometria_Api_Model_Api extends Mage_Api_Model_Resource_Abstract {
             'visibility',
             'price',
             'special_price',
+            'special_from_date',
+            'special_to_date',
             'url_path',
             'image',
             'small_image',
@@ -366,7 +368,8 @@ class Ometria_Api_Model_Api extends Mage_Api_Model_Resource_Abstract {
         $this-> _loadProductPerStoreAttributesValues($ret, $ids, $attribute_types, $db, $core_resource->getTableName('catalog_product_entity_varchar'));
         $this-> _loadProductPerStoreAttributesValues($ret, $ids, $attribute_types, $db, $core_resource->getTableName('catalog_product_entity_decimal'));
         $this-> _loadProductPerStoreAttributesValues($ret, $ids, $attribute_types, $db, $core_resource->getTableName('catalog_product_entity_int'));
-
+        $this-> _loadProductPerStoreAttributesValues($ret, $ids, $attribute_types, $db, $core_resource->getTableName('catalog_product_entity_datetime'));
+        
         return $ret;
     }
     private function _loadProductPerStoreAttributesValues(&$ret, $ids, $attribute_types, $db, $table_name){
